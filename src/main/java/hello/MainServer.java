@@ -13,7 +13,7 @@ public class MainServer {
         }
         setPort(port);
 
-		get("/", (req, res) -> "Home page");
+		get("/", (req, res) -> "The rest home page");
 		get("/hello", (req, res) -> "Hello World");
     }
 }
