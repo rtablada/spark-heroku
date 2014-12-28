@@ -1,3 +1,5 @@
+package hello;
+
 import static spark.Spark.*;
 
 public class MainServer {
