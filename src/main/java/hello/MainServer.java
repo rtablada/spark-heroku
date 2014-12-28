@@ -18,14 +18,19 @@ public class MainServer {
         }
         setPort(port);
 
+		//Delivery static file
+		staticFileLocation("/static");
+
+		// Handle requests
 		get("/", (req, res) -> {
 
 			Map map = new HashMap();
+			map.put("title", "Welcome to this world");
 			map.put("name", "Sam");
-            // The hello.ftl file is located in directory:
-            // src/test/resources/spark/template/freemarker
-            return new ModelAndView(map, "hello.mustache");	
+
+            return new ModelAndView(map, "hello.mustache");
 		}, new MustacheTemplateEngine());
+
 		get("/hello", (req, res) -> "Hello World");
     }
 }

@@ -3,7 +3,7 @@ repositories {
 }
 
 apply plugin: 'java'
-apply plugin: 'jetty'
+//apply plugin: 'jetty'
 apply plugin: 'application'
 
 mainClassName = 'hello.MainServer'
