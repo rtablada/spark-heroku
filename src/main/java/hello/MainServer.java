@@ -2,7 +2,6 @@ package hello;
 
 import static spark.Spark.*;
 import spark.ModelAndView;
-import spark.template.freemarker.FreeMarkerEngine;
 import java.util.*;
 
 public class MainServer {
@@ -19,13 +18,13 @@ public class MainServer {
         setPort(port);
 
 		get("/", (req, res) -> {
-			Map<String, Object> attributes = new HashMap<>();
-            attributes.put("message", "Hello World!");
 
+			Map map = new HashMap();
+			map.put("name", "Sam");
             // The hello.ftl file is located in directory:
             // src/test/resources/spark/template/freemarker
-            return new ModelAndView(attributes, "hello.ftl");	
-		}, new FreeMarkerEngine());
+            return new ModelAndView(map, "hello.mustache");	
+		}, new MustacheTemplateEngine());
 		get("/hello", (req, res) -> "Hello World");
     }
 }
