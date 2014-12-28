@@ -2,11 +2,18 @@ repositories {
     mavenCentral()
 }
 
+apply plugin: 'java'
 apply plugin: 'jetty'
-apply plugin:'application'
+apply plugin: 'application'
 
-mainClassName = "MainServer"
+mainClassName = "hello.MainServer"
 applicationName = "app"
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'hello.MainServer'
+    }
+}
 
 dependencies {
 	compile 'com.sparkjava:spark-core:2.1'
