@@ -12,6 +12,8 @@ public class MainServer {
             port = 8080;
         }
         setPort(port);
+
+		get("/", (req, res) -> "Home page");
 		get("/hello", (req, res) -> "Hello World");
     }
 }
