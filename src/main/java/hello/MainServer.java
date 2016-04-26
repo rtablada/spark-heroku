@@ -5,7 +5,7 @@ import spark.ModelAndView;
 import java.util.*;
 import spark.template.mustache.*;
 
-public class MainServer {
+public class Application {
     public static void main(String[] args) {
 
 		// Get port config of heroku on environment variable

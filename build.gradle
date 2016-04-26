@@ -6,7 +6,7 @@ apply plugin: 'java'
 //apply plugin: 'jetty'
 apply plugin: 'application'
 
-mainClassName = 'hello.MainServer'
+mainClassName = 'hello.Application'
 applicationName = 'app'
 
 defaultTasks = ['clean', 'jar']
@@ -19,7 +19,7 @@ dependencies {
 
 jar {
     manifest {
-        attributes 'Main-Class': 'hello.MainServer'
+        attributes 'Main-Class': 'hello.Application'
     }
 	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } } {
         // remove all signature files
