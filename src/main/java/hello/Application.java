@@ -3,7 +3,7 @@
  */
 
 import spark.*;
-
+import static spark.Spark.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -11,6 +11,15 @@ import java.util.HashMap;
 public class Application {
 
   public static void main(String[] args){
+    ProcessBuilder process = new ProcessBuilder();
+    Integer port;
+    if (process.environment().get("PORT") != null) {
+        port = Integer.parseInt(process.environment().get("PORT"));
+    } else {
+        port = 8080;
+    }
+    setPort(port);
+
     Spark.init();
 
     Spark.post(
@@ -154,5 +163,3 @@ public class Application {
     );
   }
 }
-
-
